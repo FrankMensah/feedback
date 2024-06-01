@@ -7,8 +7,8 @@ import React, { Suspense, useEffect, useState } from "react";
 
 const DashboardPage = () => {
   const { userToken }: any = useFeedbackUiContext();
-  const searchParams = useSearchParams();
-  const token = searchParams.get("token");
+  //   const searchParams = useSearchParams();
+  //   const token = searchParams.get("token");
   const [loading, setLoading] = useState(false);
   const [feedbackData, setFeedbackData] = useState<any>({});
 
@@ -18,6 +18,7 @@ const DashboardPage = () => {
 
   const getData = async () => {
     setLoading(true);
+    const token = localStorage.getItem("token");
     const response = await axios.get(
       "https://moha.pythonanywhere.com/guest/feedback-stats/",
       {
