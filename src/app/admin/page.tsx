@@ -3,7 +3,7 @@
 import { useFeedbackUiContext } from "@/context";
 import axios from "axios";
 import { useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 const DashboardPage = () => {
   const { userToken }: any = useFeedbackUiContext();
@@ -36,94 +36,97 @@ const DashboardPage = () => {
   return (
     <>
       {/* {JSON.stringify(feedbackData)} */}
-      <div className="header-space">
-        <p className="adm-fed-sys">Admin Feedback System</p>
+      <Suspense>
+        <div className="header-space">
+          <p className="adm-fed-sys">Admin Feedback System</p>
 
-        <p className="adm-user-top">Admin</p>
+          <p className="adm-user-top">Admin</p>
 
-        <p className="adm-signout-top">SignOut</p>
-      </div>
-
-      <div className="left-side">
-        <input className="inputSearch" type="text" />
-        <p className="list-side">All</p>
-
-        <p className="list-side">Restaurant</p>
-
-        <p className="list-side">Reception / Front office</p>
-
-        <p className="list-side">Room</p>
-      </div>
-
-      <div className="right-heading">
-        <p>
-          Welcome <span className="nameHuge">Admin</span>
-        </p>
-      </div>
-
-      <div className="numberSection">
-        <div className="box">
-          <p>Total feedback</p>
-          <h1>{feedbackData?.feedback_stats?.total_feedback_count || 0}</h1>
+          <p className="adm-signout-top">SignOut</p>
         </div>
-        <div className="box1">
-          <p>Feedback with Comments</p>
-          <h1>
-            {feedbackData?.comment_feedback_stats
-              ?.feedback_with_comments_count || 0}
-          </h1>
-        </div>
-        <div className="box2">
-          <p>Total Guest Satisfaction</p>
-          <h1>
-            {feedbackData?.feedback_stats?.satisfaction_per_guest?.length || 0}
-          </h1>
-        </div>
-        <div className="box3">
-          <p>Total Comment</p>
-          <h1>376</h1>
-        </div>
-      </div>
 
-      <div className="right-up-heading">
-        <li className="headi-up">Date posted</li>
-        <li className="headi-up">Full Name</li>
-        <li className="headi-up">Email</li>
-        <li className="headi-up">Phone</li>
-        <li className="headi-up">Check in</li>
-        <li className="headi-up">Check out</li>
-        <li className="headi-up">Feedback</li>
-        <li className="headi-up">Excellent</li>
-        <li className="headi-up">Good</li>
-        <li className="headi-up">Fair</li>
-        <li className="headi-up">Poor</li>
-      </div>
+        <div className="left-side">
+          <input className="inputSearch" type="text" />
+          <p className="list-side">All</p>
 
-      <div className="right-down-heading">
-        <div>
-          <li className="headi-down">August 16, 2024</li>
-          <li className="headi-down">Mohammed</li>
-          <li className="headi-down">mohammed@gmail.com</li>
-          <li className="headi-down">+233</li>
-          <li className="headi-down">Check in</li>
-          <li className="headi-down">Check out</li>
-          <li className="headi-down">Feedback</li>
-          <li className="headi-down">
-            <input type="checkbox" name="" id="" />
-          </li>
-          <li className="headi-down">
-            <input type="checkbox" name="" id="" />
-          </li>
-          <li className="headi-down">
-            <input type="checkbox" name="" id="" />
-          </li>
-          <li className="headi-down">
-            <input type="checkbox" name="" id="" />
-          </li>
+          <p className="list-side">Restaurant</p>
+
+          <p className="list-side">Reception / Front office</p>
+
+          <p className="list-side">Room</p>
         </div>
-      </div>
 
-      <div>Coming soon</div>
+        <div className="right-heading">
+          <p>
+            Welcome <span className="nameHuge">Admin</span>
+          </p>
+        </div>
+
+        <div className="numberSection">
+          <div className="box">
+            <p>Total feedback</p>
+            <h1>{feedbackData?.feedback_stats?.total_feedback_count || 0}</h1>
+          </div>
+          <div className="box1">
+            <p>Feedback with Comments</p>
+            <h1>
+              {feedbackData?.comment_feedback_stats
+                ?.feedback_with_comments_count || 0}
+            </h1>
+          </div>
+          <div className="box2">
+            <p>Total Guest Satisfaction</p>
+            <h1>
+              {feedbackData?.feedback_stats?.satisfaction_per_guest?.length ||
+                0}
+            </h1>
+          </div>
+          <div className="box3">
+            <p>Total Comment</p>
+            <h1>376</h1>
+          </div>
+        </div>
+
+        <div className="right-up-heading">
+          <li className="headi-up">Date posted</li>
+          <li className="headi-up">Full Name</li>
+          <li className="headi-up">Email</li>
+          <li className="headi-up">Phone</li>
+          <li className="headi-up">Check in</li>
+          <li className="headi-up">Check out</li>
+          <li className="headi-up">Feedback</li>
+          <li className="headi-up">Excellent</li>
+          <li className="headi-up">Good</li>
+          <li className="headi-up">Fair</li>
+          <li className="headi-up">Poor</li>
+        </div>
+
+        <div className="right-down-heading">
+          <div>
+            <li className="headi-down">August 16, 2024</li>
+            <li className="headi-down">Mohammed</li>
+            <li className="headi-down">mohammed@gmail.com</li>
+            <li className="headi-down">+233</li>
+            <li className="headi-down">Check in</li>
+            <li className="headi-down">Check out</li>
+            <li className="headi-down">Feedback</li>
+            <li className="headi-down">
+              <input type="checkbox" name="" id="" />
+            </li>
+            <li className="headi-down">
+              <input type="checkbox" name="" id="" />
+            </li>
+            <li className="headi-down">
+              <input type="checkbox" name="" id="" />
+            </li>
+            <li className="headi-down">
+              <input type="checkbox" name="" id="" />
+            </li>
+          </div>
+        </div>
+
+        <div>Coming soon</div>
+      </Suspense>
     </>
   );
 };
