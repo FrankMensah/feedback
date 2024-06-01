@@ -1,95 +1,77 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import Link from "next/link";
+import styles from "./home.module.css";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push("info");
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div>good from</div>
+    // <main className={styles.main}>
+    //   <section>
+    //     <div className="row">
+    //       <div className="row sidesAuto">
+    //         <div className="col-xl-5 col-lg-6 col-md-7 col-sm-12">
+    //           <h3>Welcome</h3>
+    //         </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    //         <div className="col-12"></div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+    //         <div className="col-xl-4 col-lg-5 col-md-7 col-sm-12">
+    //           <div className="col-sm-12">
+    //             <p>
+    //               Please give us your service back on our
+    //               <br />
+    //               services to you. Thank you
+    //             </p>
+    //           </div>
+    //         </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+    //         <div className="containerAlign">
+    //           <div className="col-sm-6 col-md-6 col-lg-4 text-center">
+    //             <a
+    //               onClick={handleNavigation}
+    //               // href="yourInfo.html"
+    //               id="restaurantLink"
+    //               className="custom-button"
+    //             >
+    //               <i className="fa-solid fa-utensils movOutlet movO"></i>{" "}
+    //               Restaurant
+    //             </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+    //             <a href="#" id="receptionLink" className="custom-button">
+    //               {" "}
+    //               <i className="fa-solid fa-handshake-angle movOutlet movT"></i>
+    //               Reception / Front
+    //             </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    //             <a href="#" id="roomLink" className="custom-button">
+    //               {" "}
+    //               <i className="fa-solid fa-building movOutlet movTh"></i>Rooms
+    //             </a>
+    //           </div>
+    //         </div>
+    //       </div>
+
+    //       <div className="row">
+    //         <div className="col-sm-12">
+    //           <button
+    //             className="custom-buttonNew custom-buttonexit"
+    //             type="button"
+    //             name="button"
+    //           >
+    //             Exit
+    //           </button>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </section>
+    // </main>
   );
 }
